@@ -1,0 +1,25 @@
+Merge Sort:
+
+Es un algoritmo de ordenamiento "dividir y conquistar" se usa para ordenar arreglos.
+Tiene 3 etapas que se repiten hasta que el arreglo este ordenado:
+
+División:  se divide en dos mitades aproximadamente iguales.
+Ordenación: Cada mitad se ordena recursivamente utilizando el algoritmo Merge Sort.
+Combinación: Las dos mitades ordenadas se combinan para formar un solo arreglo ordenado.
+
+Semaphore:
+
+Un semáforo es una estructura de datos utilizada para controlar el acceso concurrente a recursos compartidos.
+
+En el programa se utilizan dos instancias de la clase Semaphore: sem y mainSemaphore.
+
+sem se utiliza para asegurarse de que el hilo principal (el hilo en la función main) espere hasta que todos los hilos de mergeSort hayan terminado de ordenar y combinar.
+mainSemaphore se utiliza para que el hilo principal no avance hasta que se haya completado la inicialización y configuración inicial del programa.
+
+El flujo del programa es el siguiente:
+
+-El programa comienza y entra al main.
+-Se solicitan los datos del arreglo y se imprime.
+-Se crea un hilo para ejecutar la función mergeSort, que es responsable de ordenar el arreglo.
+-Se llama a sem.wait() en el hilo principal, lo que bloquea el hilo principal hasta que todos los hilos mergeSort hayan terminado.
+-Una vez que todos los hilos mergeSort han terminado, el hilo principal continúa y se imprime el arreglo ordenado.
